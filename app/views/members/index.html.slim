@@ -1,0 +1,12 @@
+H1
+  | Invite Member
+= form_with url: invite_team_members_path do |form|
+  = form.text_field :email, placeholder: 'Email'
+  = form.submit 'Invite'
+
+H1
+  | Members
+- @members.each do |member|
+  = member.user.email
+  = member.roles
+  br

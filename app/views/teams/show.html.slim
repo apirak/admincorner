@@ -8,3 +8,5 @@ div
   =< link_to "Back to teams", teams_path
 
   = button_to "Destroy this team", @team, method: :delete
+
+= link_to 'Member', team_members_path(@team)
