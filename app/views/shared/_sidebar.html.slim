@@ -1,32 +1,21 @@
 .d-flex.flex-column.flex-shrink-0.p-3.text-white.bg-dark[style="width: 280px;"]
   a.d-flex.align-items-center.mb-3.mb-md-0.me-md-auto.text-white.text-decoration-none[href="/"]
-    svg.bi.me-2[width="40" height="32"]
-      use[xlink:href="#bootstrap"]
+    i.bi.bi-cup-hot.me-2[style="font-size: 2em"]
     span.fs-4
-      | Sidebar
+      | English Corner
   hr
   ul.nav.nav-pills.flex-column.mb-auto
     li.nav-item
-      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link active",
-        "aria-current" => "page" do
-          i.bi.bi-speedometer2.me-2
-          | Dashboard
-    li
-      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link text-white" do
-        i.bi.bi-calendar-event.me-2
-        | Calendar
-    li
-      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link text-white" do
-        i.bi.bi-people.me-2
-        | Course
-    li
-      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link text-white" do
-        i.bi.bi-backpack.me-2
-        | Student
-    li
-      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link text-white" do
-        i.bi.bi-journal-bookmark.me-2
-        | Curiculum
+      = render(SideMenuComponent.new(title: "Dashboard", path: dashboard_path, icon: "bi-speedometer2"))
+    li.nav-item
+      = render(SideMenuComponent.new(title: "Calendar", path: "", icon: "bi-calendar-event"))
+    li.nav-item
+      = render(SideMenuComponent.new(title: "Course", path: "", icon: "bi-people"))
+    li.nav-item
+      = render(SideMenuComponent.new(title: "Student", path: "", icon: "bi-backpack"))
+    li.nav-item
+      = render(SideMenuComponent.new(title: "Curriculum", path: "", icon: "bi-journal-bookmark"))
+
   hr
   .dropdown
     a#dropdownUser1.d-flex.align-items-center.text-white.text-decoration-none.dropdown-toggle[href="#" data-bs-toggle="dropdown" aria-expanded="false"]
@@ -43,7 +32,7 @@
       li
         hr.dropdown-divider
       li
-        = link_to "Sign out", destroy_user_session_path,
+        = button_to "Sign out", destroy_user_session_path,
           method: :delete,
           class: "dropdown-item",
           data: { turbo: "false" }

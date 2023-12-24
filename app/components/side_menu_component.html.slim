@@ -1,0 +1,5 @@
+= link_to @path, id: "dropdownUser1",
+  class: ["nav-link", (current_page?(@path)? "active" : "text-white")].compact.join(' '),
+  "aria-current" => ("page" if current_page?(@path)) do
+    i.bi.me-2 class=(@icon)
+    = @title
