@@ -21,12 +21,15 @@ html
       script src="https://cdnjs.cloudflare.com/ajax/libs/ie8/0.8.0/ie8.js"
   body class=["text-center", ("body-signed-out" if !signed_in?)].compact.join(' ')
       - if signed_in?
-        main.container-fluid.px-3.py-3 role="main"
-          = flash_messages
-          = link_to 'Dashboard', dashboard_path
-          = link_to  current_user.email, edit_user_registration_path
-          = button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" }
-          = yield
+        main.sign-in role="main"
+          .d-flex
+            = render "shared/sidebar"
+            div
+              = flash_messages
+              = link_to 'Dashboard', dashboard_path
+              = link_to  current_user.email, edit_user_registration_path
+              = button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" }
+              = yield
       - else
         main.form-signed-out role="main"
           = yield
