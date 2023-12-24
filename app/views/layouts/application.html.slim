@@ -7,8 +7,9 @@ html
     title Admincorner
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all' ,'data-turbo-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
     = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
+
     /! IE Polyfill for CSS Elements
     /! HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
     /[if lt IE 9]
@@ -18,15 +19,15 @@ html
       // a library PolyFill for earlier IE Versions
       // https://github.com/WebReflection/ie8
       script src="https://cdnjs.cloudflare.com/ajax/libs/ie8/0.8.0/ie8.js"
-  body
-    main.container-fluid.px-3.py-3 role="main"
-      = flash_messages
+  body class=["text-center", ("body-signed-out" if !signed_in?)].compact.join(' ')
       - if signed_in?
-        = link_to 'Dashboard', dashboard_path
-        = link_to  current_user.email, edit_user_registration_path
-        = button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" }
+        main.container-fluid.px-3.py-3 role="main"
+          = flash_messages
+          = link_to 'Dashboard', dashboard_path
+          = link_to  current_user.email, edit_user_registration_path
+          = button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: "false" }
+          = yield
       - else
-        = link_to "Log in", new_user_session_path
-        = link_to "Register", new_user_registration_path
-      = yield
+        main.form-signed-out role="main"
+          = yield
 
