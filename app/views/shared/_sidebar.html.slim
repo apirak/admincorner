@@ -7,47 +7,43 @@
   hr
   ul.nav.nav-pills.flex-column.mb-auto
     li.nav-item
-      a.nav-link.active[href="#" aria-current="page"]
-        svg.bi.me-2[width="16" height="16"]
-          use[xlink:href="#home"]
-        |  Home
+      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link active",
+        "aria-current" => "page" do
+          i.bi.bi-speedometer2.me-2
+          | Dashboard
     li
-      a.nav-link.text-white[href="#"]
-        i.bi.bi-speedometer2.me-2
-        | Dashboard
+      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link text-white" do
+        i.bi.bi-calendar-event.me-2
+        | Calendar
     li
-      a.nav-link.text-white[href="#"]
-        svg.bi.me-2[width="16" height="16"]
-          use[xlink:href="#table"]
-        |  Orders
+      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link text-white" do
+        i.bi.bi-people.me-2
+        | Course
     li
-      a.nav-link.text-white[href="#"]
-        svg.bi.me-2[width="16" height="16"]
-          use[xlink:href="#grid"]
-        |  Products
+      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link text-white" do
+        i.bi.bi-backpack.me-2
+        | Student
     li
-      a.nav-link.text-white[href="#"]
-        svg.bi.me-2[width="16" height="16"]
-          use[xlink:href="#people-circle"]
-        |  Customers
+      = link_to dashboard_path, id: "dropdownUser1", class: "nav-link text-white" do
+        i.bi.bi-journal-bookmark.me-2
+        | Curiculum
   hr
   .dropdown
     a#dropdownUser1.d-flex.align-items-center.text-white.text-decoration-none.dropdown-toggle[href="#" data-bs-toggle="dropdown" aria-expanded="false"]
       img.rounded-circle.me-2[src="https://github.com/mdo.png" alt="" width="32" height="32"]
       strong
-        | mdo
+        = current_user.email
     ul.dropdown-menu.dropdown-menu-dark.text-small.shadow[aria-labelledby="dropdownUser1"]
       li
-        a.dropdown-item[href="#"]
-          | New project...
+        = link_to "Edit Profile", edit_user_registration_path,
+          class:"dropdown-item"
       li
-        a.dropdown-item[href="#"]
-          | Settings
-      li
-        a.dropdown-item[href="#"]
-          | Profile
+        = link_to "Teams", teams_path,
+          class:"dropdown-item"
       li
         hr.dropdown-divider
       li
-        a.dropdown-item[href="#"]
-          | Sign out
+        = link_to "Sign out", destroy_user_session_path,
+          method: :delete,
+          class: "dropdown-item",
+          data: { turbo: "false" }
