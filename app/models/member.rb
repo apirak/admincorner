@@ -1,4 +1,5 @@
 class Member < ApplicationRecord
   belongs_to :user
-  acts_as_tenant :team
+  belongs_to :team
+  # acts_as_tenant :team
 end

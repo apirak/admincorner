@@ -10,6 +10,6 @@ class User < ApplicationRecord
          :validatable
 
   has_many :members
-  # has_many :teams, through: :members
-  acts_as_tenant :teams, through: :members
+  has_many :teams, through: :members
+  # acts_as_tenant :team, through: :members
 end
