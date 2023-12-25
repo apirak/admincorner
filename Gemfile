@@ -55,6 +55,7 @@ gem "devise", "~> 4.9"
 gem "devise_invitable", "~> 2.0"
 gem "view_component"
 gem "slim-rails"
+gem "acts_as_tenant", "~> 1.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

@@ -19,14 +19,14 @@ user2 =
     password_confirmation: "valid1",
   )
 
-# team = Team.create(name: "Team1")
-# team.members.create(user: user1, roles: { admin: true })
+team = Team.create(name: "Team1", domain: "team1.com", subdomain: "team1")
+team.members.create(user: user1, roles: { admin: true })
 
-# team = Team.create(name: "Team2")
-# team.members.create(user: user1, roles: { admin: true })
+team = Team.create(name: "Team2", domain: "team2.com", subdomain: "team2")
+team.members.create(user: user1, roles: { admin: true })
 
-# team = Team.create(name: "Team3")
-# team.members.create(user: user2, roles: { admin: true })
+team = Team.create(name: "Team3", domain: "team3.com", subdomain: "team3")
+team.members.create(user: user2, roles: { admin: true })
 
-# team = Team.create(name: "Team4")
-# team.members.create(user: user2, roles: { admin: true })
+team = Team.create(name: "Team4", domain: "team4.com", subdomain: "team4")
+team.members.create(user: user2, roles: { admin: true })
