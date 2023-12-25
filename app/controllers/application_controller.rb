@@ -5,8 +5,10 @@ class ApplicationController < ActionController::Base
   before_action :set_current_tenant_by_current_user_first_team
 
   def set_current_tenant_by_current_user_first_team
-    current_team = current_user.members.first.team
-    set_current_tenant(current_team)
+    if current_user
+      current_team = current_user.members.first.team
+      set_current_tenant(current_team)
+    end
   end
 
   def after_sign_in_path_for(resource)

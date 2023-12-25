@@ -21,16 +21,15 @@ html
       // a library PolyFill for earlier IE Versions
       // https://github.com/WebReflection/ie8
       script src="https://cdnjs.cloudflare.com/ajax/libs/ie8/0.8.0/ie8.js"
-  body class=["text-center", ("body-signed-out" if !signed_in?)].compact.join(' ')
+  body class=[("body-signed-out" if !signed_in?)].compact.join(' ')
       - if signed_in?
-        main.sign-in role="main"
-          .d-flex
-            = render "shared/sidebar"
-            div
-              = flash_messages
-              = yield
+        main.sign-in.d-flex role="main"
+          = render "shared/sidebar"
+          div.flex-fill.d-flex.flex-column.m-3
+            = flash_messages
+            = yield
       - else
-        main.form-signed-out role="main"
+        main.form-signed-out.text-center role="main"
           = flash_messages
           = yield
 
