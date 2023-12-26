@@ -4,9 +4,9 @@ class TeamsController < ApplicationController
 
   # GET /teams or /teams.json
   def index
-    # @teams = current_user.teams
+    @teams = current_user.teams
     # @teams = current_tenant
-    @teams = Team.all
+    # @teams = Team.all
   end
 
   # GET /teams/1 or /teams/1.json
