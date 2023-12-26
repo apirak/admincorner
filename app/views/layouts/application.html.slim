@@ -23,9 +23,9 @@ html
       script src="https://cdnjs.cloudflare.com/ajax/libs/ie8/0.8.0/ie8.js"
   body class=[("body-signed-out" if !signed_in?)].compact.join(' ')
       - if signed_in?
-        main.sign-in.d-flex role="main"
+        main.fullscreen.d-flex role="main"
           = render "shared/sidebar"
-          div.flex-fill.d-flex.flex-column.m-3
+          .flex-fill.d-flex.flex-column.m-3.overflow-y-auto
             = flash_messages
             = yield
       - else
