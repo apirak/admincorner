@@ -1,4 +1,8 @@
-h1 Curriculums
+= render(HeaderComponent.new(title:"Curriculums", icon:"bi-journal-bookmark"))
+
+.text-end.my-1
+  = link_to 'New', new_team_curriculum_path(@current_team),
+    class: "btn btn-primary btn-sm"
 
 table.table.table-hover.table-sm
   thead
@@ -21,5 +25,3 @@ table.table.table-hover.table-sm
           = link_to team_curriculum_path(@current_team, curriculum), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, method: :delete do
             i.bi.bi-trash
 
-br
-= link_to 'New Curriculum', new_team_curriculum_path(@current_team)

@@ -84,6 +84,7 @@ class CurriculumsController < ApplicationController
       :short_name,
       :description,
       :team_id,
+      :picture,
     )
   end
 end

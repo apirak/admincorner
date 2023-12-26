@@ -1,7 +1,8 @@
-.align-items-center.mb-3.mb-md-0.me-md-auto
-  i.bi.bi-person-circle.me-2[style="font-size: 1.5em"]
-  span.fs-4
-    = @title
-- if @back
-  .mb-3
-    = link_to 'Back', @back
+.mb3
+  .align-items-center
+    i.bi.me-2 style="font-size: 1.5em" class=(@icon if @icon)
+    span.fs-4
+      = @title
+  - if @back
+    .mb-3
+      = link_to 'Back', @back
