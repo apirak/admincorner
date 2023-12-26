@@ -1,6 +1,6 @@
 h1 Curriculums
 
-table.table.table-striped.table-hover.table-sm
+table.table.table-hover.table-sm
   thead
     tr
       th scope="col" Name
@@ -11,13 +11,15 @@ table.table.table-striped.table-hover.table-sm
   tbody
     - @curriculums.each do |curriculum|
       tr
-        td = curriculum.name
+        td
+          = link_to curriculum.name, team_curriculum_path(@current_team, curriculum)
         td = curriculum.short_name
         td = curriculum.description
-        td = link_to 'Show', team_curriculum_path(@current_team, curriculum)
-        td = link_to 'Edit', edit_team_curriculum_path(@current_team, curriculum)
-        / td = link_to 'Destroy', team_curriculum_path(@current_team, curriculum), data: { confirm: 'Are you sure?' }, method: :delete
-        td = link_to 'Destroy', team_curriculum_path(@current_team, curriculum), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, method: :delete
+        td.d-flex.gap-2
+          = link_to edit_team_curriculum_path(@current_team, curriculum) do
+            i.bi.bi-pencil-square
+          = link_to team_curriculum_path(@current_team, curriculum), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, method: :delete do
+            i.bi.bi-trash
 
 br
 = link_to 'New Curriculum', new_team_curriculum_path(@current_team)
