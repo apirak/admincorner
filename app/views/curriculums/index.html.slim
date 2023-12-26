@@ -1,0 +1,23 @@
+h1 Curriculums
+
+table.table.table-striped.table-hover.table-sm
+  thead
+    tr
+      th scope="col" Name
+      th scope="col" Short name
+      th scope="col" Description
+      th colspan="3" scope="col"
+
+  tbody
+    - @curriculums.each do |curriculum|
+      tr
+        td = curriculum.name
+        td = curriculum.short_name
+        td = curriculum.description
+        td = link_to 'Show', team_curriculum_path(@current_team, curriculum)
+        td = link_to 'Edit', edit_team_curriculum_path(@current_team, curriculum)
+        / td = link_to 'Destroy', team_curriculum_path(@current_team, curriculum), data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Destroy', team_curriculum_path(@current_team, curriculum), data: { turbo_confirm: 'Are you sure?', turbo_method: :delete }, method: :delete
+
+br
+= link_to 'New Curriculum', new_team_curriculum_path(@current_team)

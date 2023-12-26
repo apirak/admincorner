@@ -14,7 +14,7 @@
     li.nav-item
       = render(SideMenuComponent.new(title: "Student", path: "", icon: "bi-backpack"))
     li.nav-item
-      = render(SideMenuComponent.new(title: "Curriculum", path: "", icon: "bi-journal-bookmark"))
+      = render(SideMenuComponent.new(title: "Curriculum", path: team_curriculums_path(@current_team), icon: "bi-journal-bookmark"))
 
   hr
   .dropdown
