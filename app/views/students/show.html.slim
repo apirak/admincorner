@@ -1,0 +1,45 @@
+h1 Student
+dl
+  dt Title name:
+  dd = @student.title_name
+  dt First name:
+  dd = @student.first_name
+  dt Last name:
+  dd = @student.last_name
+  dt Nickname:
+  dd = @student.nickname
+  dt Nickname en:
+  dd = @student.nickname_en
+  dt Date of birth:
+  dd = @student.date_of_birth
+  dt Gender:
+  dd = @student.gender
+  dt Current school:
+  dd = @student.current_school
+  dt Address:
+  dd = @student.address
+  dt Phone number:
+  dd = @student.phone_number
+  dt Email:
+  dd = @student.email
+  dt Medication allergies:
+  dd = @student.medication_allergies
+  dt Chronic conditions:
+  dd = @student.chronic_conditions
+  dt Emergency contact name:
+  dd = @student.emergency_contact_name
+  dt Emergency contact relationship:
+  dd = @student.emergency_contact_relationship
+  dt Emergency contact number:
+  dd = @student.emergency_contact_number
+  dt Parent name:
+  dd = @student.parent_name
+  dt Parent contact:
+  dd = @student.parent_contact
+  dt Notes:
+  dd = @student.notes
+  dt Team:
+  dd = @student.team
+= link_to 'Edit', edit_student_path(@student)
+'|
+= link_to 'Back', students_path

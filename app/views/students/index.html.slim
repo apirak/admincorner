@@ -1,0 +1,55 @@
+h1 = title('Students')
+
+table.table.table-striped.table-hover.table-sm
+  thead
+    tr
+      th scope="col" Title name
+      th scope="col" First name
+      th scope="col" Last name
+      th scope="col" Nickname
+      th scope="col" Nickname en
+      th scope="col" Date of birth
+      th scope="col" Gender
+      th scope="col" Current school
+      th scope="col" Address
+      th scope="col" Phone number
+      th scope="col" Email
+      th scope="col" Medication allergies
+      th scope="col" Chronic conditions
+      th scope="col" Emergency contact name
+      th scope="col" Emergency contact relationship
+      th scope="col" Emergency contact number
+      th scope="col" Parent name
+      th scope="col" Parent contact
+      th scope="col" Notes
+      th scope="col" Team
+      th colspan="3" scope="col"
+
+  tbody
+    - @students.each do |student|
+      tr
+        td = student.title_name
+        td = student.first_name
+        td = student.last_name
+        td = student.nickname
+        td = student.nickname_en
+        td = student.date_of_birth
+        td = student.gender
+        td = student.current_school
+        td = student.address
+        td = student.phone_number
+        td = student.email
+        td = student.medication_allergies
+        td = student.chronic_conditions
+        td = student.emergency_contact_name
+        td = student.emergency_contact_relationship
+        td = student.emergency_contact_number
+        td = student.parent_name
+        td = student.parent_contact
+        td = student.notes
+        td = student.team
+        td = link_to 'Show', student
+        td = link_to 'Edit', edit_student_path(student)
+        td = link_to 'Destroy', student, data: { confirm: 'Are you sure?' }, method: :delete
+br
+= link_to 'New Student', new_student_path

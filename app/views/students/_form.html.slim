@@ -1,0 +1,66 @@
+= form_for @student, local: true do |f|
+  - if @student.errors.any?
+    = errors_for(@student)
+
+  .form-group
+    = f.label :title_name
+    = f.text_field :title_name, class: 'form-control'
+  .form-group
+    = f.label :first_name
+    = f.text_field :first_name, class: 'form-control'
+  .form-group
+    = f.label :last_name
+    = f.text_field :last_name, class: 'form-control'
+  .form-group
+    = f.label :nickname
+    = f.text_field :nickname, class: 'form-control'
+  .form-group
+    = f.label :nickname_en
+    = f.text_field :nickname_en, class: 'form-control'
+  .form-group
+    = f.label :date_of_birth
+    = f.date_field :date_of_birth, class: 'form-control'
+  .form-group
+    = f.label :gender
+    = f.text_field :gender, class: 'form-control'
+  .form-group
+    = f.label :current_school
+    = f.text_field :current_school, class: 'form-control'
+  .form-group
+    = f.label :address
+    = f.text_area :address, class: 'form-control'
+  .form-group
+    = f.label :phone_number
+    = f.text_field :phone_number, class: 'form-control'
+  .form-group
+    = f.label :email
+    = f.text_field :email, class: 'form-control'
+  .form-group
+    = f.label :medication_allergies
+    = f.text_field :medication_allergies, class: 'form-control'
+  .form-group
+    = f.label :chronic_conditions
+    = f.text_field :chronic_conditions, class: 'form-control'
+  .form-group
+    = f.label :emergency_contact_name
+    = f.text_field :emergency_contact_name, class: 'form-control'
+  .form-group
+    = f.label :emergency_contact_relationship
+    = f.text_field :emergency_contact_relationship, class: 'form-control'
+  .form-group
+    = f.label :emergency_contact_number
+    = f.text_field :emergency_contact_number, class: 'form-control'
+  .form-group
+    = f.label :parent_name
+    = f.text_field :parent_name, class: 'form-control'
+  .form-group
+    = f.label :parent_contact
+    = f.text_field :parent_contact, class: 'form-control'
+  .form-group
+    = f.label :notes
+    = f.text_area :notes, class: 'form-control'
+  .form-group
+    = f.label :team
+    = f.text_field :team, class: 'form-control'
+  .form-group
+    = f.submit class: 'btn btn-primary btn-sm'
