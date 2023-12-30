@@ -37,12 +37,65 @@ curriculum1 =
     description: "English language for beginners",
   )
 
+curriculum1.picture.attach(
+  io: File.open(Rails.root.join("public", "images", "curriculum1.jpg")),
+  filename: "curriculum1.jpg",
+  content_type: "image/jpg",
+)
+
 curriculum2 =
   team2.curriculums.create(
     name: "English",
     short_name: "Eng 2",
     description: "English language for another beginners",
   )
+
+curriculum2.picture.attach(
+  io: File.open(Rails.root.join("public", "images", "curriculum2.jpg")),
+  filename: "curriculum2.jpg",
+  content_type: "image/jpg",
+)
+
+# Seed for Curriculums
+curriculums = [
+  {
+    name: "English Beginner",
+    short_name: "Eng Beg",
+    description:
+      "Introductory English course focusing on basic language skills.",
+  },
+  {
+    name: "English Intermediate",
+    short_name: "Eng Int",
+    description:
+      "Intermediate English course with advanced grammar and vocabulary.",
+  },
+  {
+    name: "Phonics Basic",
+    short_name: "Phon Basic",
+    description:
+      "Foundational phonics for improving reading and writing skills.",
+  },
+  {
+    name: "Phonics Advanced",
+    short_name: "Phon Adv",
+    description:
+      "Advanced phonics course emphasizing complex sounds and spelling.",
+  },
+  {
+    name: "Math Basic",
+    short_name: "Math Basic",
+    description:
+      "Elementary math concepts including addition, subtraction, and shapes.",
+  },
+  {
+    name: "Art Creativity",
+    short_name: "Art Cre",
+    description: "Art course to explore creativity with various materials.",
+  },
+]
+
+team1.curriculums.create(curriculums)
 
 student1 =
   team1.students.create(
@@ -64,6 +117,12 @@ student1 =
     notes: "น้องไม่ชอบกินนม ให้ดื่มน้ำบ่อยๆ",
   )
 
+student1.picture.attach(
+  io: File.open(Rails.root.join("public", "images", "student1.jpg")),
+  filename: "student1.jpg",
+  content_type: "image/jpg",
+)
+
 student2 =
   team1.students.create(
     name: "ปริญญา จันทร์เพ็ญ",
@@ -83,6 +142,12 @@ student2 =
     parent_contact: "0987654321",
     notes: "น้องมีอาการแพ้ยาเพนนิซิลิน",
   )
+
+student2.picture.attach(
+  io: File.open(Rails.root.join("public", "images", "student2.jpg")),
+  filename: "student2.jpg",
+  content_type: "image/jpg",
+)
 
 student3 =
   team2.students.create(
@@ -123,3 +188,9 @@ student4 =
     parent_contact: "9876543210",
     notes: "น้องต้องหลีกเลี่ยงสารลาเท็กซ์ในวัสดุต่างๆ",
   )
+
+student3.picture.attach(
+  io: File.open(Rails.root.join("public", "images", "student3.jpg")),
+  filename: "student3.jpg",
+  content_type: "image/jpg",
+)

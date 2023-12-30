@@ -1,5 +1,11 @@
-h1 Student
+= render(HeaderComponent.new(title:"Student",
+  back:team_students_path(@current_team),
+  icon:"bi-backpack"))
+
 dl
+  dt Image:
+  - if @student.picture.attached?
+    = image_tag @student.picture, style: "width:100px;"
   dt Name:
   dd = @student.name
   dt Nickname:
@@ -36,6 +42,6 @@ dl
   dd = @student.notes
   dt Team:
   dd = @student.team
-= link_to 'Edit', edit_student_path(@student)
+= link_to 'Edit', edit_team_student_path(@current_team, @student)
 '|
-= link_to 'Back', students_path
+= link_to 'Back', team_students_path(@current_team)

@@ -1,52 +1,29 @@
-= render(HeaderComponent.new(title:"Student", icon:"bi-journal-bookmark"))
+= render(HeaderComponent.new(title:"Student", icon:"bi-backpack"))
 
-table.table.table-striped.table-hover.table-sm
+.text-end.my-1
+  = link_to 'New', new_team_student_path(@current_team),
+    class: "btn btn-primary btn-sm"
+
+table.table.table-hover.table-sm
   thead
     tr
       th scope="col" Name
-      th scope="col" Last name
       th scope="col" Nickname
-      th scope="col" Nickname en
-      th scope="col" Current school
-      th scope="col" Phone number
-      th scope="col" Email
-      th scope="col" Medication allergies
-      th scope="col" Chronic conditions
-      th scope="col" Emergency contact name
-      th scope="col" Emergency contact relationship
-      th scope="col" Emergency contact number
       th scope="col" Parent name
-      th scope="col" Parent contact
       th scope="col" Notes
-      th scope="col" Team
       th colspan="3" scope="col"
 
   tbody
     - @students.each do |student|
       tr
-        td = student.name
+        td = link_to student.name, team_student_path(@current_team, student)
         td = student.nickname
-        td = student.nickname_en
-        td = student.date_of_birth
-        td = student.gender
-        td = student.current_school
-        td = student.address
-        td = student.phone_number
-        td = student.email
-        td = student.medication_allergies
-        td = student.chronic_conditions
-        td = student.emergency_contact_name
-        td = student.emergency_contact_relationship
-        td = student.emergency_contact_number
         td = student.parent_name
-        td = student.parent_contact
         td = student.notes
-        td = student.team
-        td = link_to 'Show', team_student_path(@current_team, student)
-        td = link_to 'Edit', edit_team_student_path(@current_team, student)
-        td = link_to team_student_path(@current_team, student),
-          method: :delete,
-          data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } do
-          i.bi.bi-trash
-br
-= link_to 'New Student', new_team_student_path(@current_team)
+        td.d-flex.gap-2
+          = link_to edit_team_student_path(@current_team, student) do
+            i.bi.bi-pencil-square
+          = link_to team_student_path(@current_team, student),
+            method: :delete,
+            data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } do
+            i.bi.bi-trash

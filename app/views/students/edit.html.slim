@@ -1,7 +1,3 @@
-h1 Editing Students
+= render(HeaderComponent.new(title:"Edit Student", back:team_students_path(@current_team)))
 
 = render 'form', student: @student
-
-= link_to 'Show', @student
-'|
-= link_to 'Back', students_path
