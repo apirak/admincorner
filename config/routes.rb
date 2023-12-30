@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :students
   resources :teams do
     resources :curriculums
+    resources :students
     resources :members do
       collection { post :invite }
     end

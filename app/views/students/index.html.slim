@@ -1,17 +1,13 @@
-h1 = title('Students')
+= render(HeaderComponent.new(title:"Student", icon:"bi-journal-bookmark"))
 
 table.table.table-striped.table-hover.table-sm
   thead
     tr
-      th scope="col" Title name
-      th scope="col" First name
+      th scope="col" Name
       th scope="col" Last name
       th scope="col" Nickname
       th scope="col" Nickname en
-      th scope="col" Date of birth
-      th scope="col" Gender
       th scope="col" Current school
-      th scope="col" Address
       th scope="col" Phone number
       th scope="col" Email
       th scope="col" Medication allergies
@@ -28,9 +24,7 @@ table.table.table-striped.table-hover.table-sm
   tbody
     - @students.each do |student|
       tr
-        td = student.title_name
-        td = student.first_name
-        td = student.last_name
+        td = student.name
         td = student.nickname
         td = student.nickname_en
         td = student.date_of_birth
@@ -48,8 +42,11 @@ table.table.table-striped.table-hover.table-sm
         td = student.parent_contact
         td = student.notes
         td = student.team
-        td = link_to 'Show', student
-        td = link_to 'Edit', edit_student_path(student)
-        td = link_to 'Destroy', student, data: { confirm: 'Are you sure?' }, method: :delete
+        td = link_to 'Show', team_student_path(@current_team, student)
+        td = link_to 'Edit', edit_team_student_path(@current_team, student)
+        td = link_to team_student_path(@current_team, student),
+          method: :delete,
+          data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } do
+          i.bi.bi-trash
 br
-= link_to 'New Student', new_student_path
+= link_to 'New Student', new_team_student_path(@current_team)

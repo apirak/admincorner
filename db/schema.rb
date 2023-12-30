@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_26_014540) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_26_101958) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -59,6 +59,30 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_26_014540) do
     t.index ["user_id"], name: "index_members_on_user_id"
   end
 
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "nickname"
+    t.string "nickname_en"
+    t.date "date_of_birth"
+    t.string "gender"
+    t.string "current_school"
+    t.text "address"
+    t.string "phone_number"
+    t.string "email"
+    t.string "medication_allergies"
+    t.string "chronic_conditions"
+    t.string "emergency_contact_name"
+    t.string "emergency_contact_relationship"
+    t.string "emergency_contact_number"
+    t.string "parent_name"
+    t.string "parent_contact"
+    t.text "notes"
+    t.integer "team_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_students_on_team_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "name"
     t.string "subdomain"
@@ -95,4 +119,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_26_014540) do
   add_foreign_key "curriculums", "teams"
   add_foreign_key "members", "teams"
   add_foreign_key "members", "users"
+  add_foreign_key "students", "teams"
 end
