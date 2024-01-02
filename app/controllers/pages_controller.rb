@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class PagesController < AuthorizedController
   skip_before_action :authenticate_user!, only: :landing_page
 
   def dashboard

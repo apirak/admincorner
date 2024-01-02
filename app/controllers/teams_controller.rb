@@ -1,16 +1,15 @@
-class TeamsController < ApplicationController
+class TeamsController < AuthorizedController
   before_action :set_team, only: %i[show edit update destroy]
   before_action :authorize_member, only: %i[show edit update destroy]
 
   # GET /teams or /teams.json
   def index
     @teams = current_user.teams
-    # @teams = current_tenant
-    # @teams = Team.all
   end
 
   # GET /teams/1 or /teams/1.json
   def show
+    @current_team = @team
   end
 
   # GET /teams/new

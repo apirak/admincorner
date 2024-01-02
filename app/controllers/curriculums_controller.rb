@@ -1,4 +1,4 @@
-class CurriculumsController < ApplicationController
+class CurriculumsController < AuthorizedController
   before_action :set_curriculum, only: %i[show edit update destroy]
 
   # GET /curriculums or /curriculums.json

@@ -1,4 +1,4 @@
-class StudentsController < ApplicationController
+class StudentsController < AuthorizedController
   before_action :set_student, only: %i[show edit update destroy]
 
   # GET /students or /students.json
