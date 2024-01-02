@@ -1,10 +1,10 @@
-curriculum_english_beginner:
+curriculum_one:
   name: "English Beginner"
   short_name: "Eng Beg"
   description: "Introductory English course focusing on basic language skills."
   team: team_one
 
-curriculum_english_intermediate:
+curriculum_two:
   name: "English Intermediate"
   short_name: "Eng Int"
   description:
