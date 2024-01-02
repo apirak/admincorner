@@ -44,4 +44,9 @@ dl
   dd = @student.team
 = link_to 'Edit', edit_team_student_path(@current_team, @student)
 '|
+= link_to team_student_path(@current_team, @student),
+  method: :delete,
+  data: { turbo_confirm: 'Are you sure?', turbo_method: :delete } do
+  i.bi.bi-trash
+'|
 = link_to 'Back', team_students_path(@current_team)

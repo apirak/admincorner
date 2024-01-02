@@ -82,3 +82,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+group :development, :test do
+  gem "guard"
+  gem "guard-minitest"
+end

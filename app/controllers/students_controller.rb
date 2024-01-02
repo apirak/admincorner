@@ -21,7 +21,7 @@ class StudentsController < ApplicationController
 
   # POST /students or /students.json
   def create
-    @student = @current_team.students.new(student_params)
+    @student = @current_team.students.build(student_params)
 
     respond_to do |format|
       if @student.save
@@ -74,7 +74,7 @@ class StudentsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_student
-    @student = Student.find(params[:id])
+    @student = @current_team.students.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
