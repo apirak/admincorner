@@ -1,11 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+member_one:
+  user: user_one
+  team: team_one
+  roles: { admin: true }
 
-one:
-  user: one
-  team: one
-  roles: 
-
-two:
-  user: two
-  team: two
-  roles: 
+member_two:
+  user: user_one
+  team: team_two
+  roles: { admin: true }

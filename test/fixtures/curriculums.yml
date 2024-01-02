@@ -1,13 +1,12 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+curriculum_english_beginner:
+  name: "English Beginner"
+  short_name: "Eng Beg"
+  description: "Introductory English course focusing on basic language skills."
+  team: team_one
 
-one:
-  name: MyString
-  short_name: MyString
-  description: MyText
-  team: one
-
-two:
-  name: MyString
-  short_name: MyString
-  description: MyText
-  team: two
+curriculum_english_intermediate:
+  name: "English Intermediate"
+  short_name: "Eng Int"
+  description:
+    "Intermediate English course with advanced grammar and vocabulary."
+  team: team_one

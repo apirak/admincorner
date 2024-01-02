@@ -1,7 +1,9 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+team_one:
+  name: "EC BBT"
+  domain: "team1.com"
+  subdomain: "team1"
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+team_two:
+  name: "EC BBT2"
+  domain: "team2.com"
+  subdomain: "team2"

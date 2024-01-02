@@ -1,8 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+user_one:
+  email: "user1@gmail.com"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'valid1') %>
 
-# This model initially had no columns defined. If you add columns to the
-# model remove the "{}" from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: { email: "one@gmail.com" }
-two: { email: "two@gmail.com" }
+user_two:
+  email: "user2@gmail.com"
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'valid1') %>
