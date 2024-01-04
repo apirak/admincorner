@@ -27,7 +27,7 @@
 
 ### Running Tests
 
-- To run the test suite: `bundle exec rspec` (or your specific test commands).
+- To run the test suite: `bundle exec guard` (or your specific test commands).
 
 ### Additional Services
 
