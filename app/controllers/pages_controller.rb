@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class PagesController < AuthorizedController
   skip_before_action :authenticate_user!, only: :landing_page
 
