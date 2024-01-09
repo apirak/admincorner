@@ -23,5 +23,8 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "devDependencies": {
+    "@prettier/plugin-ruby": "^4.0.4"
+  }
 }
