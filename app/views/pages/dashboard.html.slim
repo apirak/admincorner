@@ -8,3 +8,13 @@ p.w-75
   | Keep track of your grades and goals and improve your academic
   | performance with Notion tools.
 
+- @sections = []
+- @sections.push({ icon: 'bi-backpack', title: 'Student', count: '20 students' })
+- @sections.push({ icon: 'bi-journal-bookmark', title: 'Curriculum', count: '10 curriculums' })
+
+.d-flex.flex-row.w-100.my-2[style="gap:16px;"]
+  - @sections.each do |section|
+    div.p-3.bg-light [style="width:140px;"]
+      span[class="#{section[:icon]} mb-2" style="font-size:1.5em"]
+      h5.fw-bold = section[:title]
+      p.fw-light = section[:count]

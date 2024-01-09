@@ -6,15 +6,25 @@
   hr
   ul.nav.nav-pills.flex-column.mb-auto
     li.nav-item
-      = render(SideMenuComponent.new(title: "Dashboard", path: dashboard_path, icon: "bi-speedometer2"))
+      = render(SideMenuComponent.new(title: "Dashboard",
+        path: dashboard_path,
+        icon: "bi-speedometer2"))
     li.nav-item
-      = render(SideMenuComponent.new(title: "Calendar", path: "", icon: "bi-calendar-event"))
+      = render(SideMenuComponent.new(title: "Calendar",
+        path: "",
+        icon: "bi-calendar-event"))
     li.nav-item
-      = render(SideMenuComponent.new(title: "Course", path: "", icon: "bi-people"))
+      = render(SideMenuComponent.new(title: "Course",
+        path: "",
+        icon: "bi-people"))
     li.nav-item
-      = render(SideMenuComponent.new(title: "Student", path: team_students_path(@current_team), icon: "bi-backpack"))
+      = render(SideMenuComponent.new(title: "Student",
+        path: team_students_path(@current_team),
+        icon: "bi-backpack"))
     li.nav-item
-      = render(SideMenuComponent.new(title: "Curriculum", path: team_curriculums_path(@current_team), icon: "bi-journal-bookmark"))
+      = render(SideMenuComponent.new(title: "Curriculum",
+        path: team_curriculums_path(@current_team),
+        icon: "bi-journal-bookmark"))
 
   hr
   .dropdown
